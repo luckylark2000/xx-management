@@ -6,7 +6,7 @@ import {
     UserOutlined,
 } from '@ant-design/icons';
 import { Menu, MenuProps } from 'antd';
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 type MenuItem = Required<MenuProps>['items'][number];
 function getItem(
@@ -25,10 +25,10 @@ function getItem(
 const items: MenuItem[] = [
     getItem('Page1', '/page1', <PieChartOutlined />),
     getItem('Page2', '/page2', <DesktopOutlined />),
-    getItem('User', 'sub1', <UserOutlined />, [
-        getItem('Tom', '3'),
-        getItem('Bill', '4'),
-        getItem('Alex', '5'),
+    getItem('User', '/user', <UserOutlined />, [
+        getItem('Admin', '/admin'),
+        getItem('Manager', '/manager'),
+        getItem('Staff', '/staff'),
     ]),
     getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
     getItem('Files', '9', <FileOutlined />),
@@ -36,14 +36,16 @@ const items: MenuItem[] = [
 
 
 const MainMenu: React.FC = () => {
-    const navigateTo = useNavigate()
+    const navigateTo = useNavigate();
+    const currentLocation = useLocation();
+
     const menuClick = (e: { key: string }) => {
         navigateTo(e.key)
     }
     return (
         <Menu
             theme="dark"
-            defaultSelectedKeys={['/page1']}
+            defaultSelectedKeys={[currentLocation.pathname]}
             mode="inline"
             items={items}
             onClick={menuClick} />
