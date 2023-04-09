@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
-import Page1 from "../view/Page1";
-import Page2 from "../view/Page2";
-
+import { lazy } from "react";
+const Page1 = lazy(() => import("../view/Page1"));
+const Page2 = lazy(() => import("../view/Page2"));
 const routes = [{
     path: "/",
     elment: <Navigate to="page1" />,
