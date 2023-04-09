@@ -6,6 +6,7 @@ import {
     UserOutlined,
 } from '@ant-design/icons';
 import { Menu, MenuProps } from 'antd';
+import { useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -38,17 +39,26 @@ const items: MenuItem[] = [
 const MainMenu: React.FC = () => {
     const navigateTo = useNavigate();
     const currentLocation = useLocation();
-
+    const [openKeys, setOpenKeys] = useState<string[]>([""])
     const menuClick = (e: { key: string }) => {
         navigateTo(e.key)
+        //console.log(e)
+    }
+    useEffect(() => {
+
+    })
+    const openChange = (keys: string[]) => {
+        setOpenKeys([keys[keys.length - 1]]);
     }
     return (
         <Menu
             theme="dark"
-            defaultSelectedKeys={[currentLocation.pathname]}
+            defaultSelectedKeys={[currentLocation.pathname === "/" ? "/page1" : currentLocation.pathname]}
             mode="inline"
             items={items}
-            onClick={menuClick} />
+            onClick={menuClick}
+            openKeys={openKeys}
+            onOpenChange={openChange} />
     )
 }
 export default MainMenu

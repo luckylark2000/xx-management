@@ -12,7 +12,7 @@ const routes = [
         path: "/",
         element: <Home />,
         children: [{
-            path: "*",//多余的都直接跳到第一个页面即可
+            path: "/",//多余的都直接跳到第一个页面即可
             element: <Navigate to="page1" />
         },
         {
@@ -23,10 +23,6 @@ const routes = [
             path: "page2",
             element: <Page2 />
         },
-        // {
-        //     path: "user",
-        //     element: <Navigate to="admin" />,
-        //     children: [
         {
             path: "admin",
             element: <Admin />
@@ -39,9 +35,11 @@ const routes = [
             path: "staff",
             element: <Staff />
         },
-            //     ]
-            // },
         ]
+    },
+    {
+        path: "*",//匹配不上的都直接跳到page1页面即可
+        element: <Navigate to="page1" />
     },
 ]
 export default routes
