@@ -27,12 +27,16 @@ const items: MenuItem[] = [
     getItem('Page1', '/page1', <PieChartOutlined />),
     getItem('Page2', '/page2', <DesktopOutlined />),
     getItem('User', '/user', <UserOutlined />, [
-        getItem('Admin', '/admin'),
-        getItem('Manager', '/manager'),
-        getItem('Staff', '/staff'),
+        getItem('Admin', '/user/admin'),
+        getItem('Manager', '/user/manager'),
+        getItem('Staff', '/user/staff'),
     ]),
-    getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
-    getItem('Files', '9', <FileOutlined />),
+    getItem('Team', '/team', <TeamOutlined />,
+        [
+            getItem('Happy', '/team/happy'),
+            getItem('Joker', '/team/joker')
+        ]),
+    getItem('Files', '/files', <FileOutlined />),
 ];
 
 
@@ -41,12 +45,12 @@ const MainMenu: React.FC = () => {
     const currentLocation = useLocation();
     const [openKeys, setOpenKeys] = useState<string[]>([""])
     const menuClick = (e: { key: string }) => {
-        navigateTo(e.key)
-        //console.log(e)
+        navigateTo(e.key)//用于控制如何点击就转到相应的路由并且展示
     }
     useEffect(() => {
-
-    })
+        const refreshOpenkey = "/" + currentLocation.pathname.split("/")[1]
+        setOpenKeys([refreshOpenkey])
+    }, [])
     const openChange = (keys: string[]) => {
         setOpenKeys([keys[keys.length - 1]]);
     }

@@ -3,9 +3,9 @@ import { lazy } from "react";
 const Home = lazy(() => import("../view/Home"));
 const Page1 = lazy(() => import("../view/Page1"));
 const Page2 = lazy(() => import("../view/Page2"));
-const Admin = lazy(() => import("../view/Admin"));
-const Manager = lazy(() => import("../view/Manager"));
-const Staff = lazy(() => import("../view/Staff"));
+const Admin = lazy(() => import("../view/User/Admin"));
+const Manager = lazy(() => import("../view/User/Manager"));
+const Staff = lazy(() => import("../view/User/Staff"));
 
 const routes = [
     {
@@ -24,15 +24,15 @@ const routes = [
             element: <Page2 />
         },
         {
-            path: "admin",
+            path: "user/admin",
             element: <Admin />
         },
         {
-            path: "manager",
+            path: "user/manager",
             element: <Manager />
         },
         {
-            path: "staff",
+            path: "user/staff",
             element: <Staff />
         },
         ]
