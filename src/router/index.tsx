@@ -6,7 +6,9 @@ const Page2 = lazy(() => import("../view/Page2"));
 const Admin = lazy(() => import("../view/User/Admin"));
 const Manager = lazy(() => import("../view/User/Manager"));
 const Staff = lazy(() => import("../view/User/Staff"));
-
+const Happy = lazy(() => import("../view/Team/Happy"));
+const Joker = lazy(() => import("../view/Team/Joker"));
+const Files = lazy(() => import("../view/Files"));
 const routes = [
     {
         path: "/",
@@ -34,6 +36,17 @@ const routes = [
         {
             path: "user/staff",
             element: <Staff />
+        },
+        {
+            path: "team/happy",
+            element: <Happy />
+        },
+        {
+            path: "team/joker",
+            element: <Joker />
+        }, {
+            path: "files",
+            element: <Files />
         },
         ]
     },
