@@ -9,6 +9,7 @@ const Staff = lazy(() => import("../view/User/Staff"));
 const Happy = lazy(() => import("../view/Team/Happy"));
 const Joker = lazy(() => import("../view/Team/Joker"));
 const Files = lazy(() => import("../view/Files"));
+const Login = lazy(() => import("../view/Login"));
 const routes = [
     {
         path: "/",
@@ -49,6 +50,11 @@ const routes = [
             element: <Files />
         },
         ]
+    },
+    {
+
+        path: "/login",//匹配不上的都直接跳到page1页面即可
+        element: <Login />
     },
     {
         path: "*",//匹配不上的都直接跳到page1页面即可
