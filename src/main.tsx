@@ -6,6 +6,7 @@ import Loading from './load/Loading'
 import { Provider } from 'react-redux'
 import store from './store/store'
 
+import "reset-css"
 //BrowserRouter实现路由在web页面上展现，少了就不能显示出来
 //Suspense用来帮助实现懒加载
 

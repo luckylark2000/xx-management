@@ -1,8 +1,25 @@
+// .login-card {
+//     width: 300px;
+//     height: 500px;
+
+// }
 .box {
+    width: 100%;
+    height: 100vh;
     background-color: red;
-    height: calc(100vh - 48px);
-    width: 100vh;
-    margin: -24;
-    background: url("../../assets/login-background.png");
-    background-size: 100vh 100vh;
+    background: url(../../assets/login-background.png);
+    background-size: 100% 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    >:only-child {
+        height: 500px;
+        width: 400px;
+        margin-right: 200px;
+    }
 }
+
+// .card {
+
+// }

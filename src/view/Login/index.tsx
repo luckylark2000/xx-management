@@ -228,15 +228,15 @@
 //     );
 // };
 
-import { Card, Tabs } from "antd"
+import { Card, Row, Space, Tabs } from "antd"
 import styles from "./style.module.scss"
 import { useState } from "react"
 type LoginType = 'phone' | 'account';
 const Login = () => {
     const [loginType, setLoginType] = useState("passward")
     return (
-        <div className={styles.box} >
-            <Card>
+        <div className={styles.box}>
+            <Card className={styles.card} >
                 <Tabs
                     centered
                     activeKey={loginType}
@@ -254,13 +254,9 @@ const Login = () => {
                         }
                     ]}
                     onChange={(activeKey) => setLoginType(activeKey as LoginType)}
-                >
-                    {/* <Tabs.TabPane key={'account'} tab={'账号密码登录'} />
-                    <Tabs.TabPane key={'phone'} tab={'手机号登录'} /> */}
-
-                </Tabs>
+                />
             </Card>
-        </div >
+        </div>
     )
 }
 
