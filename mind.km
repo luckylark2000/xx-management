@@ -1,0 +1,299 @@
+{
+    "root": {
+        "data": {
+            "id": "crvbjynn0g80",
+            "created": 1681357679213,
+            "text": "system"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "crvbk9ejgk00",
+                    "created": 1681357702608,
+                    "text": "pages"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "crvbkfv6ngg0",
+                            "created": 1681357716675,
+                            "text": "login"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "crvbnbxnfew0",
+                                    "created": 1681357943209,
+                                    "text": "图片美观"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "crvbnj4kk740",
+                                    "created": 1681357958865,
+                                    "text": "暗黑模式"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "crvbnsgt7go0",
+                                    "created": 1681357979196,
+                                    "text": "登录框"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "crvbo3brsgg0",
+                                            "created": 1681358002836,
+                                            "text": "登录"
+                                        },
+                                        "children": [
+                                            {
+                                                "data": {
+                                                    "id": "crvboa8ag4g0",
+                                                    "created": 1681358017863,
+                                                    "text": "账户登录"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "crvbod5hu3c0",
+                                                    "created": 1681358024225,
+                                                    "text": "手机号码登录"
+                                                },
+                                                "children": []
+                                            },
+                                            {
+                                                "data": {
+                                                    "id": "crvbogi98h40",
+                                                    "created": 1681358031526,
+                                                    "text": "第三方登录如：微信、QQ登录"
+                                                },
+                                                "children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "crvbo6uztr40",
+                                            "created": 1681358010529,
+                                            "text": "注册"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "crvbkjr81qo0",
+                            "created": 1681357725142,
+                            "text": "admin"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "crvbks19lxk0",
+                    "created": 1681357743164,
+                    "text": "router",
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "crvbovwadyw0",
+                            "created": 1681358065027,
+                            "text": "路由守卫"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "crvby3ufh3s0",
+                            "created": 1681358787606,
+                            "text": "编程式路由导航"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "crvbymopx4o0",
+                                    "created": 1681358828620,
+                                    "text": "懒加载"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "crvbypo3ji80",
+                                    "created": 1681358835112,
+                                    "text": "Navigate来进行页面跳转"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "crvbkzn50q00",
+                    "created": 1681357759724,
+                    "text": "utils",
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "crvbm0wzrnc0",
+                            "created": 1681357840861,
+                            "text": "axios",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "crvblswmjj40",
+                                    "created": 1681357823424,
+                                    "text": "请求拦截"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "crvbmd5i40o0",
+                                    "created": 1681357867497,
+                                    "text": "get, post, put, delete"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "crvble7iqkw0",
+                    "created": 1681357791431,
+                    "text": "组件"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "crvblnw87bk0",
+                            "created": 1681357812516,
+                            "text": "antd"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "crvbp3t2v080",
+                    "created": 1681358082247,
+                    "text": "problems and solution"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "crvbpgk3v0g0",
+                            "created": 1681358110003,
+                            "text": "4.13",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "crvbplqcw5c0",
+                                    "created": 1681358121264,
+                                    "text": "div类里面的图片超出div的框"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "crvbq8ye2cw0",
+                                            "created": 1681358171816,
+                                            "text": "在图片的css样式中设置 overflow: hidden"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "crvbqv2mjc00",
+                                    "created": 1681358219961,
+                                    "text": "div里面的图片不能保持原比例进行缩放"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "crvbraghg3k0",
+                                            "created": 1681358253451,
+                                            "text": "在img的css属性里面添加object-fit: contain; "
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "crvbsz52m000",
+                            "created": 1681358385545,
+                            "text": "4.12",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "crvbt4sghvc0",
+                                    "created": 1681358397843,
+                                    "text": "浏览器默认带有用户代理样式表"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "crvbtplh41s0",
+                                            "created": 1681358443133,
+                                            "text": "npm i reset-css后在main.tsx文件中引入即可"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "crvbuf4b66o0",
+                                    "created": 1681358498691,
+                                    "text": "首页的背景图缩放不正确"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "crvbwky5qj40",
+                                            "created": 1681358668108,
+                                            "text": "设定background-size属性大小和背景大小一致"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
