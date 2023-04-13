@@ -228,22 +228,26 @@
 //     );
 // };
 
-import { Card, Row, Space, Tabs } from "antd"
+import { Card, Input, message, Tabs } from "antd"
 import styles from "./style.module.scss"
 import { useState } from "react"
+import { Form } from "react-router-dom";
+import loginImage from "../../assets/login_left.png"
 type LoginType = 'phone' | 'account';
 const Login = () => {
-    const [loginType, setLoginType] = useState("passward")
+    const [loginType, setLoginType] = useState("account")
     return (
         <div className={styles.box}>
+            <div>
+                <img src={loginImage} alt="login" />
+            </div>
             <Card className={styles.card} >
                 <Tabs
                     centered
                     activeKey={loginType}
-
                     items={[
                         {
-                            key: 'passward',
+                            key: 'account',
                             label: `账号密码登录`,
                             children: `Content of Tab Pane 1`,
                         },
@@ -255,6 +259,13 @@ const Login = () => {
                     ]}
                     onChange={(activeKey) => setLoginType(activeKey as LoginType)}
                 />
+                {/* <Form>fdfdf</Form> */}
+                {/* {loginType === "account" &&
+                    <Form>
+                        <Input />
+                    </Form>}
+                {loginType === "phone" &&
+                    <Form>34343</Form>} */}
             </Card>
         </div>
     )
