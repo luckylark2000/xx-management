@@ -3,6 +3,7 @@ import { Breadcrumb, Layout, theme } from 'antd';
 import MainMenu from '../components/MainMenu';
 // import router from "../router";
 import { Outlet, useRoutes } from 'react-router-dom';
+import HeadContent from './HeadContent';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -21,7 +22,9 @@ const App: React.FC = () => {
 
             </Sider>
             <Layout className="site-layout">
-                <Header style={{ padding: 0, background: colorBgContainer }} />
+                <Header style={{ padding: 0, background: colorBgContainer }} >
+                    <HeadContent />
+                </Header >
                 <Content style={{ margin: '0 16px' }}>
                     <Breadcrumb style={{ margin: '16px 0' }} items={[{ title: "Bill" }, { title: "Bob" }]} />
                     {/* {outlet} */}
