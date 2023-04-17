@@ -13,7 +13,6 @@ import routes from './router'
 //const BrowserRouter = createBrowserRouter(routes);
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-
     <BrowserRouter>
       <Suspense fallback={<Loading />}>
         <Provider store={store}>

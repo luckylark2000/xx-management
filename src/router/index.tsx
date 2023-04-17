@@ -12,52 +12,75 @@ const Files = lazy(() => import("../view/Files"));
 const Login = lazy(() => import("../view/Login"));
 const routes = [
     {
-        path: "/",
+        path: "/home",
         element: <Home />,
-        children: [{
-            path: "/",//多余的都直接跳到第一个页面即可
-            element: <Navigate to="page1" />
-        },
-        {
-            path: "page1",
-            element: <Page1 />
-        },
-        {
-            path: "page2",
-            element: <Page2 />
-        },
-        {
-            path: "user/admin",
-            element: <Admin />
-        },
-        {
-            path: "user/manager",
-            element: <Manager />
-        },
-        {
-            path: "user/staff",
-            element: <Staff />
-        },
-        {
-            path: "team/happy",
-            element: <Happy />
-        },
-        {
-            path: "team/joker",
-            element: <Joker />
-        }, {
-            path: "files",
-            element: <Files />
-        },
+        children: [
+            {
+                index: true,
+                element: <Navigate to='page1' />
+            },
+            {
+                path: "page1",
+                element: <Page1 />
+            },
+            {
+                path: "page2",
+                element: <Page2 />
+            },
+            {
+                path: "user",
+                // element: <Admin />,
+                //element: <Navigate to='admin' />,
+                children: [{
+                    index: true,
+                    element: <Navigate to='admin' />
+                },
+                {
+                    path: "admin",
+                    element: <Admin />
+                },
+                {
+                    path: "manager",
+                    element: <Manager />
+                },
+                {
+                    path: "staff",
+                    element: <Staff />
+                },]
+            },
+            {
+                path: "team",
+                children: [
+                    {
+                        index: true,
+                        element: <Navigate to='happy' />
+                    },
+                    {
+                        path: "happy",
+                        element: <Happy />
+                    },
+                    {
+                        path: "joker",
+                        element: <Joker />
+                    },]
+            },
+            {
+                path: "files",
+                element: <Files />
+            },
         ]
     },
     {
-        path: "/login",//
+        path: "/login",//登录页
         element: <Login />
     },
     {
-        path: "*",//匹配不上的都直接跳到page1页面即可
+        path: "/",//首次进入直接重定向到登录页面
         element: <Navigate to="/login" />
+    },
+    {
+        path: "*",//匹配不上的都直接跳到首页即可
+        element: <Navigate to="/home" />
     },
 ]
 export default routes
