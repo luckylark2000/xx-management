@@ -52,13 +52,12 @@ const routes = [
         ]
     },
     {
-
-        path: "/login",//匹配不上的都直接跳到page1页面即可
+        path: "/login",//
         element: <Login />
     },
     {
         path: "*",//匹配不上的都直接跳到page1页面即可
-        element: <Navigate to="page1" />
+        element: <Navigate to="/login" />
     },
 ]
 export default routes
