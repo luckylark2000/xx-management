@@ -228,14 +228,15 @@
 //     );
 // };
 
-import { Card, Input, message, Tabs } from "antd"
+import { Button, Card, Input, message, Tabs } from "antd"
 import styles from "./style.module.scss"
 import { useState } from "react"
-import { Form } from "react-router-dom";
+import { Form, useNavigate } from "react-router-dom";
 import loginImage from "../../assets/login_left.png"
 type LoginType = 'phone' | 'account';
 const Login = () => {
     const [loginType, setLoginType] = useState("account")
+    const navigateTo = useNavigate()
     return (
         <div className={styles.box}>
             <div>
@@ -266,6 +267,10 @@ const Login = () => {
                     </Form>}
                 {loginType === "phone" &&
                     <Form>34343</Form>} */}
+                <Button
+                    onClick={() => {
+                        navigateTo("/home")
+                    }}>登录</Button>
             </Card>
         </div>
     )

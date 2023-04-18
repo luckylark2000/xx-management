@@ -17,4 +17,4 @@ TODO　优化界面样式
 TODO　找一个后台管理页面进行对标模仿做
 例如： [一个B站的医药管理系统](https://www.bilibili.com/video/BV12G411A7zR/?p=7&spm_id_from=pageDriver&vd_source=9a25169e10cee14a220c559b6e40fdc0)
 
-
+TODO 可以尝试使用sessionStorage来实现菜单选项卡的刷新保持展开
