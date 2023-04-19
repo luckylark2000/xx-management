@@ -228,15 +228,16 @@
 //     );
 // };
 
-import { Button, Card, Input, message, Tabs } from "antd"
+import { Button, Card, Form, Input, message, Tabs } from "antd"
 import styles from "./style.module.scss"
 import { useState } from "react"
-import { Form, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import loginImage from "../../assets/login_left.png"
 type LoginType = 'phone' | 'account';
+
 const Login = () => {
-    const [loginType, setLoginType] = useState("account")
     const navigateTo = useNavigate()
+    const [loginType, setLoginType] = useState<LoginType>('account');
     return (
         <div className={styles.box}>
             <div>
@@ -260,13 +261,13 @@ const Login = () => {
                     ]}
                     onChange={(activeKey) => setLoginType(activeKey as LoginType)}
                 />
-                {/* <Form>fdfdf</Form> */}
-                {/* {loginType === "account" &&
+
+                {loginType === "account" &&
                     <Form>
                         <Input />
                     </Form>}
                 {loginType === "phone" &&
-                    <Form>34343</Form>} */}
+                    <Form>34343</Form>}
                 <Button
                     onClick={() => {
                         navigateTo("/home")
@@ -277,3 +278,4 @@ const Login = () => {
 }
 
 export default Login
+

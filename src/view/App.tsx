@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
-import router from "../router";
-import { useRoutes } from 'react-router-dom';
-
+import React, { Suspense } from 'react';
+import GetRouter from "../router";
+import { HashRouter, useRoutes } from 'react-router-dom';
+import Loading from '../load/Loading';
 const App: React.FC = () => {
-  const outlet = useRoutes(router);
   return (
-    <div className='app'>
-      {outlet}
-    </div>
+    //Suspense用来帮助实现懒加载
+    <Suspense fallback={<Loading />}>
+      <HashRouter>
+        <GetRouter />
+      </HashRouter >
+    </Suspense>
+
   );
 };
 

@@ -1,4 +1,4 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, useRoutes } from "react-router-dom";
 import { lazy } from "react";
 const Home = lazy(() => import("../view/Home"));
 const Page1 = lazy(() => import("../view/Page1"));
@@ -10,7 +10,12 @@ const Happy = lazy(() => import("../view/Team/Happy"));
 const Joker = lazy(() => import("../view/Team/Joker"));
 const Files = lazy(() => import("../view/Files"));
 const Login = lazy(() => import("../view/Login"));
-const routes = [
+
+const router = [
+    {
+        path: "/login",//登录页
+        element: <Login />
+    },
     {
         path: "/home",
         element: <Home />,
@@ -71,10 +76,6 @@ const routes = [
         ]
     },
     {
-        path: "/login",//登录页
-        element: <Login />
-    },
-    {
         path: "/",//首次进入直接重定向到登录页面
         element: <Navigate to="/login" />
     },
@@ -83,4 +84,9 @@ const routes = [
         element: <Navigate to="/home" />
     },
 ]
-export default routes
+
+const GetRouter = () => {
+    let routes = useRoutes(router)
+    return routes
+}
+export default GetRouter
