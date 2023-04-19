@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import GetRouter from "../router";
-import { HashRouter, useRoutes } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import Loading from '../load/Loading';
 const App: React.FC = () => {
   return (
@@ -10,7 +10,6 @@ const App: React.FC = () => {
         <GetRouter />
       </HashRouter >
     </Suspense>
-
   );
 };
 
