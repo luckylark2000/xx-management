@@ -2,7 +2,7 @@
 import { Button, Card, Checkbox, Divider, Form, Input, message, Space, Tabs } from "antd"
 import styles from "./style.module.scss"
 import { CSSProperties, useState } from "react"
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import loginImage from "../../assets/login_left.png"
 import { AlipayOutlined, LockOutlined, TaobaoOutlined, UserOutlined } from "@ant-design/icons";
 type LoginType = 'phone' | 'account';
@@ -17,6 +17,13 @@ const iconStyles: CSSProperties = {
 const Login = () => {
     const navigateTo = useNavigate()
     const [loginType, setLoginType] = useState<LoginType>('account');
+    const [accountForm] = Form.useForm()
+
+    const accountFormOnFinish = () => {
+        localStorage.setItem("token", "34343434")
+        console.log("登录了")
+    }
+
     return (
         <div className={styles.box}>
             <div>
@@ -44,9 +51,8 @@ const Login = () => {
                 {loginType === "account" &&
                     <Form
                         initialValues={{ remember: true }}
-                        onFinish={() => {
-                            //TODO待完成 
-                        }}>
+                        form={accountForm}
+                        onFinish={accountFormOnFinish}>
                         <Form.Item
                             name="username"
                             rules={[{ required: true, message: 'Please input your Username!' }]}
@@ -79,6 +85,7 @@ const Login = () => {
                     type="primary"
                     block
                     onClick={() => {
+                        accountForm.submit();
                         navigateTo("/home")
                         message.success("登录成功！")
                     }}>登录</Button>
