@@ -24,19 +24,19 @@ function getItem(
     } as MenuItem;
 }
 const items: MenuItem[] = [
-    getItem('Page1', '/dashboard/index', <PieChartOutlined />),
-    getItem('Page2', '/dataScreen/index', <DesktopOutlined />),
-    getItem('User', 'user', <UserOutlined />, [
+    getItem('看板主页', '/dashboard/index', <PieChartOutlined />),
+    getItem('大屏显示', '/dataScreen/index', <DesktopOutlined />),
+    getItem('用户管理', 'user', <UserOutlined />, [
         getItem('Admin', '/user/admin'),
         getItem('Manager', '/user/manager'),
         getItem('Staff', '/user/staff'),
     ]),
-    getItem('Team', 'team', <TeamOutlined />,
+    getItem('团队管理', 'team', <TeamOutlined />,
         [
             getItem('Happy', '/team/happy'),
             getItem('Joker', '/team/joker')
         ]),
-    getItem('Files', '/files', <FileOutlined />),
+    getItem('文件', '/files', <FileOutlined />),
 ];
 
 
@@ -56,9 +56,6 @@ const MainMenu: React.FC = () => {
         // if (!currentLocation.pathname.slice(6)) {
         //     setSelectedKeys(["page1"])
         // }
-        // // else if(){
-
-        // // }
         setOpenKeys([currentLocation.pathname.split("/")[2]])
     }, [])
     const openChange = (keys: string[]) => {
