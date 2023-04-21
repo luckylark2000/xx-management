@@ -19,9 +19,8 @@ const Login = () => {
     const [loginType, setLoginType] = useState<LoginType>('account');
     const [accountForm] = Form.useForm()
 
-    const accountFormOnFinish = () => {
-        localStorage.setItem("token", "34343434")
-        console.log("登录了")
+    const accountFormOnFinish = () => {//表单里没有数据这里是不会执行的
+        localStorage.setItem("token", "34343434df")
     }
 
     return (
@@ -86,7 +85,7 @@ const Login = () => {
                     block
                     onClick={() => {
                         accountForm.submit();
-                        navigateTo("/home")
+                        navigateTo("/dashboard/index")
                         message.success("登录成功！")
                     }}>登录</Button>
                 <Divider plain>

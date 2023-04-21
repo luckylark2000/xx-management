@@ -24,19 +24,19 @@ function getItem(
     } as MenuItem;
 }
 const items: MenuItem[] = [
-    getItem('Page1', 'page1', <PieChartOutlined />),
-    getItem('Page2', 'page2', <DesktopOutlined />),
+    getItem('Page1', '/dashboard/index', <PieChartOutlined />),
+    getItem('Page2', '/dataScreen/index', <DesktopOutlined />),
     getItem('User', 'user', <UserOutlined />, [
-        getItem('Admin', 'user/admin'),
-        getItem('Manager', 'user/manager'),
-        getItem('Staff', 'user/staff'),
+        getItem('Admin', '/user/admin'),
+        getItem('Manager', '/user/manager'),
+        getItem('Staff', '/user/staff'),
     ]),
     getItem('Team', 'team', <TeamOutlined />,
         [
-            getItem('Happy', 'team/happy'),
-            getItem('Joker', 'team/joker')
+            getItem('Happy', '/team/happy'),
+            getItem('Joker', '/team/joker')
         ]),
-    getItem('Files', 'files', <FileOutlined />),
+    getItem('Files', '/files', <FileOutlined />),
 ];
 
 
@@ -46,7 +46,7 @@ const MainMenu: React.FC = () => {
     const [openKeys, setOpenKeys] = useState<string[]>([""])
     // const [selectedKeys, setSelectedKeys] = useState<string[]>([currentLocation.pathname.slice(6)])
     const menuClick = (e: { key: string }) => {
-        console.log(e)
+        //console.log(e)
         navigateTo(e.key)//用于控制如何点击就转到相应的路由并且展示
     }
     useEffect(() => {

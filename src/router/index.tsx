@@ -11,82 +11,78 @@ const Joker = lazy(() => import("../view/Team/Joker"));
 const Files = lazy(() => import("../view/Files"));
 const Login = lazy(() => import("../view/Login"));
 
-const router = [
-    {
-        path: "/login",//登录页
-        element: <Login />
-    },
-    {
-        path: "/home",
-        element: <Home />,
-        children: [
-            {
-                index: true,
-                element: <Navigate to='page1' />
-            },
-            {
-                path: "page1",
-                element: <Page1 />
-            },
-            {
-                path: "page2",
-                element: <Page2 />
-            },
-            {
-                path: "user",
-                // element: <Admin />,
-                //element: <Navigate to='admin' />,
-                children: [{
-                    index: true,
-                    element: <Navigate to='admin' />
-                },
-                {
-                    path: "admin",
-                    element: <Admin />
-                },
-                {
-                    path: "manager",
-                    element: <Manager />
-                },
-                {
-                    path: "staff",
-                    element: <Staff />
-                },]
-            },
-            {
-                path: "team",
-                children: [
-                    {
-                        index: true,
-                        element: <Navigate to='happy' />
-                    },
-                    {
-                        path: "happy",
-                        element: <Happy />
-                    },
-                    {
-                        path: "joker",
-                        element: <Joker />
-                    },]
-            },
-            {
-                path: "files",
-                element: <Files />
-            },
-        ]
-    },
+export const router_items: Array<object> = [
     {
         path: "/",//首次进入直接重定向到登录页面
         element: <Navigate to="/login" />
     },
     {
+        path: "/login",//登录页
+        element: <Login />,
+        meta: {
+            unwantedAuth: true//不需要进行身份验证
+        }
+    },
+    {
+        //path: "",
+        element: <Home />,
+        children: [
+            {
+                index: true,
+                element: <Navigate to='/dashboard/index' />
+            },
+            {
+                path: "/dashboard/index",
+                element: <Page1 />
+            },
+            {
+                path: "/dataScreen/index",
+                element: <Page2 />
+            },
+
+            //path: "user",
+            // element: <Admin />,
+            //element: <Navigate to='admin' />,
+
+            {
+                path: "/user/admin",
+                element: <Admin />
+            },
+            {
+                path: "/user/manager",
+                element: <Manager />
+            },
+            {
+                path: "/user/staff",
+                element: <Staff />
+            },
+
+            //team
+
+            {
+                path: "/team/happy",
+                element: <Happy />
+            },
+            {
+                path: "/team/joker",
+                element: <Joker />
+            },
+            //file
+            {
+                path: "/files",
+                element: <Files />
+            },
+        ]
+    },
+
+    {
         path: "*",//匹配不上的都直接跳到首页即可
-        element: <Navigate to="/home" />
+        element: <Navigate to="/login" />
     },
 ]
 
 const GetRouter = () => {
-    let routes = useRoutes(router)
+    let routes = useRoutes(router_items)
     return routes
 }
 export default GetRouter
