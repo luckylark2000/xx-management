@@ -28,10 +28,6 @@ export const router_items: Array<object> = [
         element: <Home />,
         children: [
             {
-                index: true,
-                element: <Navigate to='/dashboard/index' />
-            },
-            {
                 path: "/dashboard/index",
                 element: <Page1 />
             },
