@@ -39,33 +39,24 @@ const items: MenuItem[] = [
     getItem('文件', '/files', <FileOutlined />),
 ];
 
-
 const MainMenu: React.FC = () => {
     const navigateTo = useNavigate();
     const currentLocation = useLocation();
     const [openKeys, setOpenKeys] = useState<string[]>([""])
-    // const [selectedKeys, setSelectedKeys] = useState<string[]>([currentLocation.pathname.slice(6)])
     const menuClick = (e: { key: string }) => {
-        //console.log(e)
         navigateTo(e.key)//用于控制如何点击就转到相应的路由并且展示
     }
     useEffect(() => {
-        //const refreshOpenkey = "/home/" + currentLocation.pathname.split("/")[2]
-        //console.log(currentLocation.pathname)
-        // console.log(currentLocation.pathname.slice(6))
-        // if (!currentLocation.pathname.slice(6)) {
-        //     setSelectedKeys(["page1"])
-        // }
-        setOpenKeys([currentLocation.pathname.split("/")[2]])
+        //设置默认打开页
+        setOpenKeys([currentLocation.pathname.split("/")[1]])
     }, [])
     const openChange = (keys: string[]) => {
-        //console.log(keys)
         setOpenKeys([keys[keys.length - 1]]);
     }
     return (
         <Menu
             theme="dark"
-            selectedKeys={[currentLocation.pathname.slice(6) ? currentLocation.pathname.slice(6) : 'page1']}
+            selectedKeys={[currentLocation.pathname]}
             mode="inline"
             items={items}
             onClick={menuClick}
