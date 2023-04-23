@@ -21,6 +21,9 @@ const Login = () => {
 
     const accountFormOnFinish = () => {//表单里没有数据这里是不会执行的
         localStorage.setItem("token", "34343434df")
+        // 表单提交成功后进行页面跳转
+        navigateTo("/dashboard/index")
+        message.success("登录成功！")
     }
 
     return (
@@ -85,8 +88,8 @@ const Login = () => {
                     block
                     onClick={() => {
                         accountForm.submit();
-                        navigateTo("/dashboard/index")
-                        message.success("登录成功！")
+                        // navigateTo("/dashboard/index")
+                        // message.success("登录成功！")
                     }}>登录</Button>
                 <Divider plain>
                     <span style={{ color: '#CCC', fontWeight: 'normal', fontSize: 14 }}>

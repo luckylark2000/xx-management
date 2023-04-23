@@ -15,6 +15,7 @@ const HeadContent = () => {
             centered: true,
             onOk: () => {
                 //TODO token设置为空
+                localStorage.clear();//这里将token清空了
                 message.success("退出成功！")
                 navigateTo("/login")
             }

@@ -1,0 +1,46 @@
+// .container {
+//     background-color: gray;
+// }
+
+// .box {
+//     margin: 30px;
+//     background-color: white;
+// }
+
+//
+// .container {
+//     background-color: gray;
+// }
+
+// .box {
+//     margin: 30px;
+//     background-color: white;
+//     border: 1px solid black;
+//     /* 添加边框 */
+// }
+// .container {
+//     background-color: gray;
+// }
+
+// .box {
+//     margin: 30px;
+//     background-color: white;
+// }
+
+// .box:first-child {
+//     margin-bottom: 0;
+//     /* 将第一个元素的下外边距设置为0 */
+// }
+.container {
+    background-color: gray;
+}
+
+.box {
+    margin: 30px;
+    background-color: white;
+}
+
+.box:first-child {
+    float: left;
+    /* 将第一个元素设置为浮动元素 */
+}
