@@ -11,3 +11,10 @@ export const sub = (num: number) => {
         num
     }
 }
+
+export const changeVersion = (version: string) => {
+    return {
+        type: types.CHANGE_VERSION,
+        version
+    }
+}

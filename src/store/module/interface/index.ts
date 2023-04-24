@@ -6,4 +6,5 @@ export interface GlobalState {
 
 export interface InfoState {
     version: string
+    num: number
 }

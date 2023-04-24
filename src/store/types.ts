@@ -10,3 +10,6 @@ export const SET_LANGUAGE = "SET_LANGUAGE";
 export const ADD = "ADD";
 
 export const SUB = "SUB";
+
+//改变版本号
+export const CHANGE_VERSION = "CHANGE_VERSION";
