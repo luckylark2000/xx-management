@@ -5,6 +5,14 @@
 + 进入系统首先是一个表格统计并展示数据
 + 人员管理页面
 
+## 目前使用到的技术和辅助工具包
+TS, Antd, axios, hooks, redux, react-redux, react-router, immer,npregress
+
+路由拦截，token检测
+
+心知天气api获取天气信息
+
+
 TODO　写一个form表单提交功能的页面
 
 TODO　写一个table的运用项目
@@ -16,6 +24,8 @@ TODO　找一个后台管理页面进行对标模仿做
 TODO 可以尝试使用sessionStorage来实现菜单选项卡的刷新保持展开
 
 TODO 路由的类型约束没有做完整
+
+TODO 添加nprogress进度条显示功能
 
 明确各个模块的作用：
 按照以下几个部分来组织：
