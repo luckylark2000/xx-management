@@ -10,7 +10,7 @@ const Happy = lazy(() => import("../view/Team/Happy"));
 const Joker = lazy(() => import("../view/Team/Joker"));
 const Files = lazy(() => import("../view/Files"));
 const Login = lazy(() => import("../view/Login"));
-const NotFound = lazy(() => import("../view/NotFound"));
+const NotFound = lazy(() => import("../components/ErrorMessage/404"));
 export const router_items: Array<object> = [
     {
         path: "/",//首次进入直接重定向到登录页面
@@ -74,16 +74,16 @@ export const router_items: Array<object> = [
             },
         ]
     },
-    {
-        path: "/404",//匹配不上的都直接跳到首页即可
-        element: <NotFound />,
-        meta: {
-            unwantedAuth: true//不需要进行身份验证
-        }
-    },
+    // {
+    //     path: "/404",//匹配不上的都直接跳到首页即可
+    //     element: <NotFound />,
+    //     meta: {
+    //         unwantedAuth: true//不需要进行身份验证
+    //     }
+    // },
     {
         path: "*",//匹配不上的都直接跳到首页即可
-        element: <Navigate to="/login" />
+        element: <NotFound />
     },
 ]
 
