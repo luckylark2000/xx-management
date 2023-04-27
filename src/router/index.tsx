@@ -11,6 +11,9 @@ const Joker = lazy(() => import("../view/Team/Joker"));
 const Files = lazy(() => import("../view/Files"));
 const Login = lazy(() => import("../view/Login"));
 const NotFound = lazy(() => import("../components/ErrorMessage/404"));
+const NotAuth = lazy(() => import("../components/ErrorMessage/403"));
+const NotNetwork = lazy(() => import("../components/ErrorMessage/500"));
+
 export const router_items: Array<object> = [
     {
         path: "/",//首次进入直接重定向到登录页面
@@ -85,6 +88,32 @@ export const router_items: Array<object> = [
         path: "*",//匹配不上的都直接跳到首页即可
         element: <NotFound />
     },
+    {
+        path: "/403",
+        element: <NotAuth />,
+        meta: {
+            title: "403页面",
+            key: "403"
+        }
+    },
+    {
+        path: "/404",
+        element: <NotFound />,
+        meta: {
+            unwantedAuth: true,//不需要进行身份验证
+            title: "404页面",
+            key: "404"
+        }
+    },
+    {
+        path: "/500",
+        element: <NotNetwork />,
+        meta: {
+            unwantedAuth: true,//不需要进行身份验证
+            title: "500页面",
+            key: "500"
+        }
+    }
 ]
 
 const GetRouter = () => {

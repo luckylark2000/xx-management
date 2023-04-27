@@ -1,11 +1,13 @@
 import React from 'react';
 import { Button, Result } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import { HOME_URL } from "../../config/config";
+
 
 const NotFound: React.FC = () => {
     const navigateTo = useNavigate();
     const goHome = () => {
-        navigateTo("/dashboard/index")
+        navigateTo(HOME_URL)
     }
     return <Result
         status="404"
