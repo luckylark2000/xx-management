@@ -3,7 +3,7 @@
 ## 项目目录结构
 + 介绍和展示页面+登录和注册
 + 进入系统首先是一个表格统计并展示数据
-+ 人员管理页面
++ 人员管理页面+1
 
 ## 目前使用到的技术和辅助工具包
 TS, Antd, axios, hooks, redux, react-redux, react-router, immer,npregress
