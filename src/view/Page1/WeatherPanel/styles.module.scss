@@ -1,0 +1,59 @@
+$primary-color: #5cb85c;
+$button-hover-color: #449d44;
+
+.weatherPanel {
+    width: 300px;
+    height: 400px;
+    //background-image: url(../../../assets/login_left.png);
+    background-color: rgba(67, 129, 245, 0.715);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+    .location {
+        font-size: 32px;
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    .time {
+        font-size: 10px;
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 15px;
+    }
+
+    .weather {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 15px;
+    }
+
+    .temperature {
+        font-size: 64px;
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    .updateBtn {
+        //padding: 10px 20px;
+        line-height: 18px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: $primary-color;
+
+        &:hover {
+            background-color: $button-hover-color;
+        }
+    }
+}

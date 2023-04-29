@@ -6,6 +6,7 @@ import axios from "axios";
 import { get } from "../../api";
 import { useEffect, useState } from "react";
 import { ReloadOutlined } from "@ant-design/icons";
+import WeatherPanel from "./WeatherPanel";
 
 
 //const axios = require('axios');
@@ -51,7 +52,7 @@ const Page1 = () => {
     const num = useSelector((state: { info: { num: number } }) => state.info.num);
     const username = useSelector((state: { global: { username: string } }) => state.global.username);
     const dispatch = useDispatch();
-    const [weatherInfo, setWeatherInfo] = useState<{ address: string, temp: number, time: string, text: string }>({ address: "苏州", temp: 26, time: Date(), text: "多云" })
+    const [weatherInfo, setWeatherInfo] = useState<{ address: string, temp: string, time: string, text: string }>({ address: "苏州", temp: "26", time: Date(), text: "多云" })
     //console.log(counter);
     useEffect(() => {
         getWeather();
@@ -62,12 +63,11 @@ const Page1 = () => {
     }
     //获取最近一次的天气信息
     const getWeather = () => {
-
         get<{
             results: Array<{
                 location: { name: string },
                 last_update: string,
-                now: { temperature: number, text: string }
+                now: { temperature: string, text: string }
             }>
         }>(
             "https://api.seniverse.com/v3/weather/now.json?key=SeY2O5jFl66hysx91&location=苏州&language=zh-Hans&unit=c"
@@ -86,13 +86,13 @@ const Page1 = () => {
         <Button onClick={addClick} >点我+1</Button>
         <p>count:{num}
             username:{username}</p>
-        <div>
-            <h1>天气：{weatherInfo.text}</h1>
-            <p>地点：{weatherInfo.address}</p>
-            <p>时间：{weatherInfo.time}</p>
-            <p>温度：{weatherInfo.temp}℃</p>
-            <Button onClick={getWeather} type="primary" icon={<ReloadOutlined />} >刷新</Button>
-        </div>
+        <WeatherPanel
+            location={weatherInfo.address}
+            time={weatherInfo.time}
+            weather={weatherInfo.text}
+            temperature={weatherInfo.temp + "℃"}
+            updateWeather={getWeather}
+        />
     </div>)
 }
 export default Page1
